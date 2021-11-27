@@ -27,9 +27,9 @@ export default function TextArea() {
 
         <h1 className="text-white m-2">Recipients File</h1>
         <div className="bg-white m-2 w-11/12 h-10 border p-0.5 rounded-md flex items-end justify-end">
-          <label class=" mr-3 text-black px-4  bg-gray-400 rounded-md shadow-md tracking-wide  cursor-pointer ease-linear ">
-            <i class="fas fa-cloud-upload-alt fa-3x"></i>
-            <input type="file" title="file-input" class="mr-3 mb-1 " onChange={ (e) => setFile(e.target.files) } />
+          <label className=" mr-3 text-black px-4  bg-gray-400 rounded-md shadow-md tracking-wide  cursor-pointer ease-linear ">
+            <i className="fas fa-cloud-upload-alt fa-3x"></i>
+            <input type="file" title="file-input" className="mr-3 mb-1 " onChange={ (e) => setFile(e.target.files) } />
           </label>
         </div>
 
@@ -57,7 +57,7 @@ export default function TextArea() {
         ></textarea>
 
         <div className="m-2 w-11/12 flex items-end justify-end">
-          <button data-testid={"send-button"} onClick={()=>{setEmailText(text)}} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  rounded  ">
+          <button data-testid={"send-button"} onClick={()=>{setEmailText(text)}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4  rounded  ">
             SEND
           </button>
         </div>
