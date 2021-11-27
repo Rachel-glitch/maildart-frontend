@@ -9,6 +9,7 @@ export default function TextArea() {
     "there will be some email content "
   );
 
+  console.log(file);
   return (
     <div className="bg-black text-black flex p-1 h-full">
       <div className="h-full flex-1">
