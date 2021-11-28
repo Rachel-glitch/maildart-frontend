@@ -2,52 +2,52 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
-test('renders learn react link', () => {
+test('TestRenderingReactLink1', () => {
   render(<App />);
   const linkElement = screen.getByText(/Mailgun/i);
   expect(linkElement).toBeInTheDocument();
 });
 
-test('renders learn react link 2', () => {
+test('TestRenderingReactLink2', () => {
   render(<App />);
   const linkElement = screen.getByText(/Nodemailer/i);
   expect(linkElement).toBeInTheDocument();
 });
 
-test('renders learn react link 3', () => {
+test('TestRenderingReactLink3', () => {
   render(<App />);
   const linkElement = screen.getByText(/Mailgun/i);
   expect(linkElement).toBeInTheDocument();
 });
 
-test('renders learn react link 4', () => {
+test('TestRenderingReactLink4', () => {
   render(<App />);
   const linkElement = screen.getByText(/SendGrid/i);
   expect(linkElement).toBeInTheDocument();
 });
 //--------------------------------------------------------------------
 
-test('label test', () => {
+test('TestLabelRendering', () => {
   render(<App />);
   const labelEl = screen.getByTestId(/subject-input/i);
   expect(labelEl).toBeInTheDocument();
 });
 
-test('subect input text value', () => {
+test('TestSubectInputTextValue', () => {
   render(<App />);
   const inputEl = screen.getByTestId("subject-input");
   fireEvent.change(inputEl, {target:{value:'subject example'}})
   expect(inputEl.value).toBe('subject example')
 });
 
-test("radio1 value", () => {
+test("TestRaio1Text", () => {
   render(<App/>);
   const radio = screen.getByTestId('listmonk')
   fireEvent.change(radio, { target: { value: "Listmonk" } });
   expect(radio.value).toBe('Listmonk')
 });
 
-test("radio4 attribute exist", () => {
+test("TestRadio4HavingConcreteAttribute", () => {
   render(<App/>);
   const radio = screen.getByTestId('sendgrid')
   fireEvent.change(radio, { target: { value: "SendGrid" } });
@@ -55,7 +55,7 @@ test("radio4 attribute exist", () => {
   expect(radio).toHaveAttribute('name');
 });
 
-  test("radio1 attribute exist", () => {
+  test("TestRadio1HavingConcreteAttribute", () => {
     render(<App/>);
     const radio = screen.getByTestId('listmonk')
     fireEvent.change(radio, { target: { value: "Listmonk" } });
@@ -63,7 +63,7 @@ test("radio4 attribute exist", () => {
     expect(radio).toHaveAttribute('id');
   });
 
-  test("radio3 have concrete attribute ", () => {
+  test("TestRadio3HavingConcreteAttribute", () => {
     render(<App/>);
     const radio = screen.getByTestId('mailgun')
     fireEvent.change(radio, { target: { value: "Mailgun" } });
@@ -71,14 +71,14 @@ test("radio4 attribute exist", () => {
     expect(radio).toHaveAttribute("type", "radio");
   });
 
-  test("radio2 have concrete attribute", () => {
+  test("TestRadio2HavingConcreteAttribute", () => {
     render(<App/>);
     const radio = screen.getByTestId('nodemailer')
     fireEvent.change(radio, { target: { value: "Nodemailer" } });
     fireEvent.click(radio)
     expect(radio).toHaveAttribute('type', "radio");});
 
-  test("radio1 checked", () => {
+  test("TestRadio1CheckedAttribute", () => {
     render(<App/>);
     const radio = screen.getByTestId('listmonk')
     fireEvent.change(radio, { target: { value: 'Listmonk' } });
@@ -94,12 +94,12 @@ test("radio4 attribute exist", () => {
     expect(radio).toBeChecked;
   });
 
-  test('radio2 label text', () => {
+  test('TestRadio2LabelText', () => {
     render(<App />);
     expect(screen.getByTestId("nm").textContent).toEqual("Nodemailer");
   });
 
-  test("radio2 attribute", () => {
+  test("TestRadio2Attribute", () => {
     render(<App/>);
     const radio = screen.getByTestId('nodemailer')
     fireEvent.change(radio, { target: { value: "Nodemailer" } });
@@ -107,46 +107,46 @@ test("radio4 attribute exist", () => {
   });
 
 
-it("checkButtonRender", () => {
+it("TestButtonRender", () => {
   const{queryByTitle} = render(<App/>);
   const btn = queryByTitle("unsubscribeButton");
   expect(btn).toBeTruthy();
 });
 
-it("checkSubjectInput", ()=>{
+it("TestSubjectInput", ()=>{
   const{queryByTitle} = render(<App/>);
   const sbj = queryByTitle("subject-input");
   expect(sbj).toBeInTheDocument();
   expect(sbj).toHaveAttribute("type", "text");
 })
 
-it("checkFileInput", ()=>{
+it("TestFileInput", ()=>{
   const{queryByTitle} = render(<App/>);
   const sbj = queryByTitle("file-input");
   expect(sbj).toBeInTheDocument();
   expect(sbj).toHaveAttribute("type", "file");
 })
 
-test("EmailTextInput", () => {
+test("TestEmailTextInput", () => {
   render(<App/>);
   const input = screen.getByTestId('email-input')
   fireEvent.change(input, { target: { value: "email text example 1" } });
   expect(input.value).toBe('email text example 1')
 });
 
-test("AuthKeyInput", () => {
+test("TestAuthKeyInput", () => {
   render(<App/>);
   const input = screen.getByTestId('authKey-input')
   fireEvent.change(input, { target: { value: "auth key" } });
   expect(input.value).toBe('auth key')
 });
 
-test('display email default text', () => {
+test('TestDisplayingEmailDefaultText', () => {
   render(<App />);
   expect(screen.getByTestId("emailDefault")).toHaveTextContent("there will be some email content");
 });
 
-test('change email text', () => {
+test('TestChangeEmailText', () => {
   render(<App />);
   const input = screen.getByTestId('email-input')
   fireEvent.change(input, { target: { value: "email text example 1" } });
@@ -156,7 +156,7 @@ test('change email text', () => {
 });
 
 
-test('radio text', () => {
+test('TestRenderingRadioFileText', () => {
   render(<App />);
   expect(screen.getByTestId("sg").textContent).toEqual("SendGrid");
 });
